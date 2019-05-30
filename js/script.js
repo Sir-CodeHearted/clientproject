@@ -17,7 +17,16 @@ $('#searchButton').click(function() {
         url: url,
         method: "GET",
         success: function(response) {
-            console.log('response', response)
+
+            console.log('response ', response)
+            // now you need to find you info in the response
+            // for example, coordinates can be found with the following
+            var coordinates = response.coord;
+
+            //finally, add to document
+            $("#Co").text(coordinates.lon + " " + coordinates.lat);
+
+
         }
     })
 })
